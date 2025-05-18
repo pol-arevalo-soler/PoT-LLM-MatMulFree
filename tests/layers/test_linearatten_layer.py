@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from fla.layers.linear_attn import LinearAttention
+from mmfreelm.layers.linear_attn import LinearAttention
 
 
 @pytest.mark.parametrize("B", [4, 8])
@@ -16,7 +16,7 @@ def test_linearatten_layer(
     H: int,
     dtype: torch.dtype
 ):
-    from fla.utils import device
+    from mmfreelm.utils import device
     x = torch.randn(B, T, H).to(dtype).to(device).requires_grad_(True)
     dy = torch.randn(B, T, H).to(dtype).to(device)
     model = LinearAttention(hidden_size=H, mode='chunk').to(dtype).to(device)

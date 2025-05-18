@@ -5,10 +5,10 @@ import os
 import pytest
 import torch
 
-from fla.ops.linear_attn import chunk_linear_attn, fused_chunk_linear_attn, fused_recurrent_linear_attn
-from fla.ops.linear_attn.naive import naive_chunk_linear_attn
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.linear_attn import chunk_linear_attn, fused_chunk_linear_attn, fused_recurrent_linear_attn
+from mmfreelm.ops.linear_attn.naive import naive_chunk_linear_attn
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

@@ -10,7 +10,7 @@ import torch
 from transformers import AutoModelForCausalLM
 
 import fla  # noqa
-from fla.models.rwkv7 import RWKV7Config
+from mmfreelm.models.rwkv7 import RWKV7Config
 
 
 def convert(

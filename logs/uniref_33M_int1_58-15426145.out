@@ -1,0 +1,75 @@
+/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/matmulfreellm:
+W&B offline. Running your script from this directory will only write metadata locally. Use wandb disabled to completely turn off W&B.
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+[2025-05-05 12:16:02,256] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:16:02,256] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:16:02,256] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:16:02,256] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+HGRNBitConfig {
+  "attn": null,
+  "attn_mode": "fused_recurrent",
+  "bos_token_id": 25,
+  "conv_size": 4,
+  "elementwise_affine": true,
+  "eos_token_id": 26,
+  "expand_ratio": 1,
+  "fuse_cross_entropy": true,
+  "fuse_norm": true,
+  "fuse_swiglu": true,
+  "hidden_act": "swish",
+  "hidden_ratio": 4,
+  "hidden_size": 480,
+  "initializer_range": 0.006,
+  "intermediate_size": null,
+  "max_position_embeddings": 2048,
+  "model_type": "hgrn_bit",
+  "norm_eps": 1e-06,
+  "num_heads": 20,
+  "num_hidden_layers": 12,
+  "pad_token_id": 27,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.45.0",
+  "use_cache": true,
+  "use_lower_bound": true,
+  "use_short_conv": false,
+  "vocab_size": 29
+}
+
+HGRNBitForMLM(
+  (model): HGRNBitModel(
+    (embeddings): Embedding(29, 480, padding_idx=27)
+    (layers): ModuleList(
+      (0-11): 12 x HGRNBitBlock(
+        (attn_norm): RMSNorm(480, eps=1e-06)
+        (attn): HGRNBitAttention(
+          (i_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+          (f_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+          (g_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+          (g_norm): FusedRMSNormGated(480, eps=1e-06, activation=swish)
+          (o_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+        )
+        (mlp_norm): RMSNorm(480, eps=1e-06)
+        (mlp): GatedMLPBit(
+          (gate_proj): FusedBitLinear(in_features=480, out_features=1280, bias=False, norm_eps=1e-08)
+          (up_proj): FusedBitLinear(in_features=480, out_features=1280, bias=False, norm_eps=1e-08)
+          (down_proj): FusedBitLinear(in_features=1280, out_features=480, bias=False, norm_eps=1e-08)
+          (swiglu_linear): SwiGLULinear()
+        )
+      )
+    )
+    (norm): RMSNorm(480, eps=1e-06)
+  )
+  (lm_head): FusedBitLinear(in_features=480, out_features=29, bias=False, norm_eps=1e-08)
+)
+Number of parameters: 33279360
+Using initial learning rate: 0.0004, weight decay: 0.1
+Checking step number: 0 and best loss: inf
+Loading dataset...
+Read file with 87590345 sequences.
+Sampler prepared with 2850556 batches (starting from batch 0).
+Dataset loaded in 6m 21.33s
+Training model from step: 0 with best loss: inf
+New best loss: 3.392601728439331

@@ -14,7 +14,7 @@ from transformers.optimization import get_cosine_schedule_with_warmup
 
 import fla
 
-classes = [getattr(fla.models, i) for i in fla.models.__all__]
+classes = [getattr(mmfreelm.models, i) for i in mmfreelm.models.__all__]
 configs = {i.model_type: i() for i in classes if issubclass(i, PretrainedConfig)}
 
 

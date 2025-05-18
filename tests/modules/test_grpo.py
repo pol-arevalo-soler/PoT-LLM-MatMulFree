@@ -3,8 +3,8 @@
 import pytest
 import torch
 
-from fla.modules.grpo import fused_grpo_loss, grpo_loss_torch
-from fla.utils import device, device_torch_lib
+from mmfreelm.modules.grpo import fused_grpo_loss, grpo_loss_torch
+from mmfreelm.utils import device, device_torch_lib
 
 
 @pytest.mark.parametrize("B", [2])

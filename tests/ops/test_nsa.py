@@ -6,11 +6,11 @@ import pytest
 import torch
 import triton
 
-from fla.ops.common.utils import prepare_token_indices
-from fla.ops.nsa.naive import naive_nsa
-from fla.ops.nsa.parallel import parallel_nsa
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.common.utils import prepare_token_indices
+from mmfreelm.ops.nsa.naive import naive_nsa
+from mmfreelm.ops.nsa.parallel import parallel_nsa
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

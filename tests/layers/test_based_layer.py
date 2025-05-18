@@ -3,8 +3,8 @@
 import pytest
 import torch
 
-from fla.layers.based import BasedLinearAttention
-from fla.utils import is_intel_alchemist
+from mmfreelm.layers.based import BasedLinearAttention
+from mmfreelm.utils import is_intel_alchemist
 
 
 @pytest.mark.parametrize("B", [2])
@@ -21,7 +21,7 @@ def test_based_layer(
     H: int,
     dtype: torch.dtype
 ):
-    from fla.utils import device
+    from mmfreelm.utils import device
     x = torch.randn(B, T, H).to(dtype).to(device).requires_grad_(True)
     dy = torch.randn(B, T, H).to(dtype).to(device)
     model = BasedLinearAttention(H, mode='fused_chunk').to(dtype).to(device)

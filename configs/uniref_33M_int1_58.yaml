@@ -1,0 +1,36 @@
+# --------CONFIGURATION FILE--------
+
+# This is the configuration file of power of 2, where min = 1.0, max = 64. (With 0)
+
+# --- wandb config ---
+wandb_project: mmfreeplm           
+wandb_name: 33M_int1_58
+model: mmfreeplm   
+
+# --- dataset specifications ---
+train_data: /leonardo_scratch/large/userexternal/parevalo/mmfreeplm_data/uniref90.fasta
+out_dir: /leonardo_scratch/large/userexternal/parevalo/mmfreeplm_logs/logs_uniref90/uniref90_33M                      
+checkpoint: /leonardo_scratch/large/userexternal/parevalo/mmfreeplm_logs/logs_uniref90/uniref90_33M/33M_int1_58/weights_last.ckpt
+on_disk : false
+esm1_like: false
+nlp_mode : false
+attn_mode: fused_recurrent
+
+
+# --- model architecture ---
+num_heads: 20
+num_layers: 12      
+embed_dim: 480      
+extension_type: None
+gbst_blocks: 3
+
+# --- training hyperparameters ---
+precision: bf16-mixed
+num_nodes: 1
+toks_per_batch: 16384
+initial_lr: 4.0e-4
+grad_acc: 16
+weight_decay: 0.1
+beta1: 0.9
+beta2: 0.95
+adam_eps: 1e-08

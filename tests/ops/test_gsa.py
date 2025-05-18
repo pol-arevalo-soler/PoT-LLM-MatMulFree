@@ -6,10 +6,10 @@ import pytest
 import torch
 import torch.nn.functional as F
 
-from fla.ops.gsa import chunk_gsa, fused_recurrent_gsa
-from fla.ops.gsa.naive import naive_recurrent_gsa
-from fla.ops.utils.testing import assert_close
-from fla.utils import check_shared_mem, device, device_platform
+from mmfreelm.ops.gsa import chunk_gsa, fused_recurrent_gsa
+from mmfreelm.ops.gsa.naive import naive_recurrent_gsa
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import check_shared_mem, device, device_platform
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

@@ -5,10 +5,10 @@ import os
 import pytest
 import torch
 
-from fla.ops.attn.parallel import parallel_attn
-from fla.ops.common.utils import prepare_lens
-from fla.ops.utils.testing import assert_close
-from fla.utils import check_shared_mem, device
+from mmfreelm.ops.attn.parallel import parallel_attn
+from mmfreelm.ops.common.utils import prepare_lens
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import check_shared_mem, device
 
 try:
     from flash_attn import flash_attn_func, flash_attn_varlen_func

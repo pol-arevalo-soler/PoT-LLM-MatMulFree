@@ -48,7 +48,7 @@ To train your 340M model from scratch, execute the following command:
 
 ```sh
 bash train.sh \
-  --job.config_file flame/models/fla.toml \
+  --job.config_file flame/models/mmfreelm.toml \
   --job.dump_folder exp/gla-340M-10B/batch32.seqlen2048.warmup1024.update1.steps20480.lr3e-4 \
   --model.config configs/gla_340M.json \
   --model.tokenizer_path fla-hub/gla-1.3B-100B \
@@ -116,7 +116,7 @@ Here, <path-to-output-folder> is the directory where your distributed checkpoint
 3. Directly launch training from the converted checkpoint:
 ```sh
 bash train.sh \
-  --job.config_file flame/models/fla.toml \
+  --job.config_file flame/models/mmfreelm.toml \
   --job.dump_folder <path-to-output-folder> \
   --model.config <path-to-gsa-config> \
   --model.tokenizer_path fla-hub/gla-1.3B-100B \

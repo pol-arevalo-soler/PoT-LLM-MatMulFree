@@ -1,0 +1,10 @@
+/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/matmulfreellm:
+W&B offline. Running your script from this directory will only write metadata locally. Use wandb disabled to completely turn off W&B.
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+[2025-05-05 12:40:58,137] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:40:58,137] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:40:58,137] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:40:58,137] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)

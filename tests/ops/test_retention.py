@@ -5,10 +5,10 @@ import os
 import pytest
 import torch
 
-from fla.ops.retention import chunk_retention, fused_recurrent_retention, parallel_retention
-from fla.ops.retention.naive import naive_retention
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.retention import chunk_retention, fused_recurrent_retention, parallel_retention
+from mmfreelm.ops.retention.naive import naive_retention
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

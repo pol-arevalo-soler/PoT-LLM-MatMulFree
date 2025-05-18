@@ -4,8 +4,8 @@
 import torch
 import triton
 
-from fla.ops.rwkv7 import fused_addcmul_rwkv7
-from fla.ops.rwkv7.fused_addcmul import torch_addcmul_rwkv7
+from mmfreelm.ops.rwkv7 import fused_addcmul_rwkv7
+from mmfreelm.ops.rwkv7.fused_addcmul import torch_addcmul_rwkv7
 
 
 def addcmul_torch_fuse(hidden_states, delta, x_x):
@@ -43,7 +43,7 @@ def addcmul_torch_fuse(hidden_states, delta, x_x):
     )
 )
 def benchmark(T, provider):
-    from fla.utils import device
+    from mmfreelm.utils import device
     dtype = torch.bfloat16
     requires_grad = True
     # Read B, H, D from environment variables, default to 16, 8, 128 if not set

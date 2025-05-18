@@ -7,9 +7,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from fla.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
-from fla.ops.utils.testing import assert_close
-from fla.utils import device, device_platform
+from mmfreelm.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device, device_platform
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 ci_env = os.getenv("CI_ENV") == "1"

@@ -3,9 +3,9 @@
 import pytest
 import torch
 
-from fla.modules.rotary import RotaryEmbedding, rotary_embedding_ref
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.modules.rotary import RotaryEmbedding, rotary_embedding_ref
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 
 @pytest.mark.parametrize("B", [2])

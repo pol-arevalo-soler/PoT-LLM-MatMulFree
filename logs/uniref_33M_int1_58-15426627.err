@@ -1,0 +1,187 @@
+Traceback (most recent call last):
+  File "/leonardo/home/userexternal/parevalo/.local/bin/wandb", line 10, in <module>
+    sys.exit(cli())
+             ^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/cli/cli.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/cli/cli.py", line 245, in login
+    wandb.setup(
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 432, in setup
+    return _setup(settings=settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 368, in _setup
+    _singleton = _WandbSetup(settings=settings, pid=pid)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 99, in __init__
+    self._settings = self._settings_setup(settings)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 172, in _settings_setup
+    s.update_from_workspace_config_file()
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_settings.py", line 1438, in update_from_workspace_config_file
+    setattr(self, key, value)
+  File "pydantic/main.py", line 357, in pydantic.main.BaseModel.__setattr__
+ValueError: "Settings" object has no field "disabled"
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 309, in <module>
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 309, in <module>
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 309, in <module>
+    main(config, args.from_checkpoint, args.extra_epoch)
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 127, in main
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 309, in <module>
+    main(config, args.from_checkpoint, args.extra_epoch)
+    fabric = Fabric(
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 127, in main
+             ^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/fabric.py", line 122, in __init__
+    fabric = Fabric(
+    main(config, args.from_checkpoint, args.extra_epoch)
+             ^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/fabric.py", line 122, in __init__
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 127, in main
+    main(config, args.from_checkpoint, args.extra_epoch)
+  File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 127, in main
+    fabric = Fabric(
+             ^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/fabric.py", line 122, in __init__
+    fabric = Fabric(
+             ^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/fabric.py", line 122, in __init__
+    self._connector = _Connector(
+    self._connector = _Connector(
+    self._connector = _Connector(
+                      ^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 156, in __init__
+                      ^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 156, in __init__
+                      ^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 156, in __init__
+    self._connector = _Connector(
+                      ^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 156, in __init__
+    self._init_strategy()
+    self._init_strategy()
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 448, in _init_strategy
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 448, in _init_strategy
+    self._init_strategy()
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 448, in _init_strategy
+    self._init_strategy()
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/connector.py", line 448, in _init_strategy
+    self.strategy = STRATEGY_REGISTRY.get(self._strategy_flag)
+    self.strategy = STRATEGY_REGISTRY.get(self._strategy_flag)
+    self.strategy = STRATEGY_REGISTRY.get(self._strategy_flag)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/registry.py", line 94, in get
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/registry.py", line 94, in get
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/registry.py", line 94, in get
+    self.strategy = STRATEGY_REGISTRY.get(self._strategy_flag)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/registry.py", line 94, in get
+    return data["strategy"](**data["init_params"])
+    return data["strategy"](**data["init_params"])
+    return data["strategy"](**data["init_params"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/deepspeed.py", line 285, in __init__
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/deepspeed.py", line 285, in __init__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/deepspeed.py", line 285, in __init__
+    return data["strategy"](**data["init_params"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/strategies/deepspeed.py", line 285, in __init__
+    import deepspeed
+    import deepspeed
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/__init__.py", line 26, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/__init__.py", line 26, in <module>
+    import deepspeed
+    import deepspeed
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/__init__.py", line 26, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/__init__.py", line 26, in <module>
+    from . import module_inject
+    from . import module_inject
+    from . import module_inject
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/__init__.py", line 6, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/__init__.py", line 6, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/__init__.py", line 6, in <module>
+    from . import module_inject
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/__init__.py", line 6, in <module>
+    from .replace_module import replace_transformer_layer, revert_transformer_layer, ReplaceWithTensorSlicing, GroupQuantizer, generic_injection
+    from .replace_module import replace_transformer_layer, revert_transformer_layer, ReplaceWithTensorSlicing, GroupQuantizer, generic_injection
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/replace_module.py", line 16, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/replace_module.py", line 16, in <module>
+    from .replace_module import replace_transformer_layer, revert_transformer_layer, ReplaceWithTensorSlicing, GroupQuantizer, generic_injection
+    from .replace_module import replace_transformer_layer, revert_transformer_layer, ReplaceWithTensorSlicing, GroupQuantizer, generic_injection
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/replace_module.py", line 16, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/replace_module.py", line 16, in <module>
+    from .auto_tp import AutoTP, ReplaceWithTensorSlicing, Loading
+    from .auto_tp import AutoTP, ReplaceWithTensorSlicing, Loading
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/auto_tp.py", line 14, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/auto_tp.py", line 14, in <module>
+    from .auto_tp import AutoTP, ReplaceWithTensorSlicing, Loading
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/auto_tp.py", line 14, in <module>
+    from .auto_tp import AutoTP, ReplaceWithTensorSlicing, Loading
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/auto_tp.py", line 14, in <module>
+    from .layers import *
+    from .layers import *
+    from .layers import *
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/layers.py", line 16, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/layers.py", line 16, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/layers.py", line 16, in <module>
+    from .layers import *
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/module_inject/layers.py", line 16, in <module>
+    from deepspeed.runtime.tensor_parallel import AUTOTP_MODE
+    from deepspeed.runtime.tensor_parallel import AUTOTP_MODE
+    from deepspeed.runtime.tensor_parallel import AUTOTP_MODE
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/__init__.py", line 6, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/__init__.py", line 6, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/__init__.py", line 6, in <module>
+    from deepspeed.runtime.tensor_parallel import AUTOTP_MODE
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/__init__.py", line 6, in <module>
+    from .config import AUTOTP_MODE, get_tensor_parallel_config
+    from .config import AUTOTP_MODE, get_tensor_parallel_config
+    from .config import AUTOTP_MODE, get_tensor_parallel_config
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/config.py", line 7, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/config.py", line 7, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/config.py", line 7, in <module>
+    from .config import AUTOTP_MODE, get_tensor_parallel_config
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/tensor_parallel/config.py", line 7, in <module>
+    from deepspeed.runtime.config_utils import DeepSpeedConfigModel
+    from deepspeed.runtime.config_utils import DeepSpeedConfigModel
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/config_utils.py", line 12, in <module>
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/config_utils.py", line 12, in <module>
+    from deepspeed.runtime.config_utils import DeepSpeedConfigModel
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/config_utils.py", line 12, in <module>
+    from deepspeed.runtime.config_utils import DeepSpeedConfigModel
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/deepspeed/runtime/config_utils.py", line 12, in <module>
+    from pydantic import BaseModel, ConfigDict, field_serializer
+    from pydantic import BaseModel, ConfigDict, field_serializer
+ImportError: cannot import name 'field_serializer' from 'pydantic' (/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/pydantic/__init__.cpython-311-x86_64-linux-gnu.so)
+ImportError: cannot import name 'field_serializer' from 'pydantic' (/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/pydantic/__init__.cpython-311-x86_64-linux-gnu.so)
+    from pydantic import BaseModel, ConfigDict, field_serializer
+    from pydantic import BaseModel, ConfigDict, field_serializer
+ImportError: cannot import name 'field_serializer' from 'pydantic' (/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/pydantic/__init__.cpython-311-x86_64-linux-gnu.so)
+ImportError: cannot import name 'field_serializer' from 'pydantic' (/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/pydantic/__init__.cpython-311-x86_64-linux-gnu.so)
+srun: error: lrdn1647: tasks 0-3: Exited with exit code 1

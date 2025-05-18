@@ -12,7 +12,7 @@ except ImportError:
 from tokenizers import Tokenizer
 from transformers import PreTrainedTokenizerFast
 
-from fla.models.rwkv7 import RWKV7ForCausalLM
+from mmfreelm.models.rwkv7 import RWKV7ForCausalLM
 
 
 if __name__ == '__main__':

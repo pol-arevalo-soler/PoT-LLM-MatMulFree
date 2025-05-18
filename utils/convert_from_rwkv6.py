@@ -28,7 +28,7 @@ import torch
 from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
 
 import fla  # noqa
-from fla.utils import device
+from mmfreelm.utils import device
 
 
 def sizeof_fmt(num, suffix='B'):

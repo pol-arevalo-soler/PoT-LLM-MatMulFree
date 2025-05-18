@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from fla.modules import FusedLayerNormGated, FusedRMSNormGated
-from fla.utils import device
+from mmfreelm.modules import FusedLayerNormGated, FusedRMSNormGated
+from mmfreelm.utils import device
 
 
 @pytest.mark.parametrize("B", [2])

@@ -1,0 +1,158 @@
+/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/matmulfreellm:
+W&B offline. Running your script from this directory will only write metadata locally. Use wandb disabled to completely turn off W&B.
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+Using configuration file: /leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/configs/uniref_33M_int1_58.yaml
+[2025-05-05 12:47:35,469] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:47:35,469] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:47:35,469] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-05 12:47:35,469] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+HGRNBitConfig {
+  "attn": null,
+  "attn_mode": "fused_recurrent",
+  "bos_token_id": 25,
+  "conv_size": 4,
+  "elementwise_affine": true,
+  "eos_token_id": 26,
+  "expand_ratio": 1,
+  "fuse_cross_entropy": true,
+  "fuse_norm": true,
+  "fuse_swiglu": true,
+  "hidden_act": "swish",
+  "hidden_ratio": 4,
+  "hidden_size": 480,
+  "initializer_range": 0.006,
+  "intermediate_size": null,
+  "max_position_embeddings": 2048,
+  "model_type": "hgrn_bit",
+  "norm_eps": 1e-06,
+  "num_heads": 20,
+  "num_hidden_layers": 12,
+  "pad_token_id": 27,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.45.0",
+  "use_cache": true,
+  "use_lower_bound": true,
+  "use_short_conv": false,
+  "vocab_size": 29
+}
+
+HGRNBitForMLM(
+  (model): HGRNBitModel(
+    (embeddings): Embedding(29, 480, padding_idx=27)
+    (layers): ModuleList(
+      (0-11): 12 x HGRNBitBlock(
+        (attn_norm): RMSNorm(480, eps=1e-06)
+        (attn): HGRNBitAttention(
+          (i_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+          (f_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+          (g_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+          (g_norm): FusedRMSNormGated(480, eps=1e-06, activation=swish)
+          (o_proj): FusedBitLinear(in_features=480, out_features=480, bias=False, norm_eps=1e-08)
+        )
+        (mlp_norm): RMSNorm(480, eps=1e-06)
+        (mlp): GatedMLPBit(
+          (gate_proj): FusedBitLinear(in_features=480, out_features=1280, bias=False, norm_eps=1e-08)
+          (up_proj): FusedBitLinear(in_features=480, out_features=1280, bias=False, norm_eps=1e-08)
+          (down_proj): FusedBitLinear(in_features=1280, out_features=480, bias=False, norm_eps=1e-08)
+          (swiglu_linear): SwiGLULinear()
+        )
+      )
+    )
+    (norm): RMSNorm(480, eps=1e-06)
+  )
+  (lm_head): FusedBitLinear(in_features=480, out_features=29, bias=False, norm_eps=1e-08)
+)
+Number of parameters: 33279360
+Using initial learning rate: 0.0004, weight decay: 0.1
+Checking step number: 0 and best loss: inf
+Loading dataset...
+Read file with 87590345 sequences.
+Sampler prepared with 2850556 batches (starting from batch 0).
+Dataset loaded in 6m 51.83s
+Training model from step: 0 with best loss: inf
+New best loss: 3.381101369857788
+New best loss: 3.148300886154175
+New best loss: 3.1392757892608643
+New best loss: 2.9973549842834473
+New best loss: 2.976155996322632
+New best loss: 2.857337474822998
+New best loss: 2.7736775875091553
+New best loss: 2.7683606147766113
+New best loss: 2.753161668777466
+New best loss: 2.705012083053589
+New best loss: 2.6870291233062744
+New best loss: 2.664109230041504
+New best loss: 2.6633551120758057
+New best loss: 2.662391185760498
+New best loss: 2.658719062805176
+New best loss: 2.63674259185791
+New best loss: 2.623887777328491
+New best loss: 2.6206681728363037
+New best loss: 2.599881410598755
+New best loss: 2.599719285964966
+New best loss: 2.5968270301818848
+New best loss: 2.595618963241577
+New best loss: 2.5837740898132324
+New best loss: 2.579280138015747
+New best loss: 2.5659070014953613
+New best loss: 2.5589911937713623
+New best loss: 2.5424137115478516
+New best loss: 2.534942865371704
+New best loss: 2.527711868286133
+New best loss: 2.5249550342559814
+New best loss: 2.517165422439575
+New best loss: 2.5064122676849365
+New best loss: 2.4791276454925537
+New best loss: 2.4670166969299316
+New best loss: 2.46165132522583
+New best loss: 2.4515292644500732
+New best loss: 2.446803569793701
+New best loss: 2.443559408187866
+New best loss: 2.4357666969299316
+New best loss: 2.432305097579956
+New best loss: 2.4309675693511963
+New best loss: 2.4052340984344482
+New best loss: 2.404451370239258
+New best loss: 2.397754669189453
+New best loss: 2.390843152999878
+New best loss: 2.372044324874878
+New best loss: 2.3603453636169434
+New best loss: 2.3526413440704346
+New best loss: 2.336378574371338
+New best loss: 2.3267555236816406
+New best loss: 2.316974401473999
+New best loss: 2.3054075241088867
+New best loss: 2.3043572902679443
+New best loss: 2.304027795791626
+New best loss: 2.2919552326202393
+New best loss: 2.284095048904419
+New best loss: 2.2645204067230225
+New best loss: 2.206197500228882
+New best loss: 2.1526992321014404
+New best loss: 2.1190807819366455
+New best loss: 2.086669683456421
+New best loss: 1.9671884775161743
+New best loss: 1.8870749473571777
+New best loss: 1.8408173322677612
+New best loss: 1.820359468460083
+New best loss: 1.5874465703964233
+New best loss: 1.5270020961761475
+New best loss: 1.2656382322311401
+New best loss: 1.0304598808288574
+New best loss: 0.9727737903594971
+New best loss: 0.9721925854682922
+New best loss: 0.8262080550193787
+New best loss: 0.8164384365081787
+New best loss: 0.7962787747383118
+New best loss: 0.6414102911949158
+New best loss: 0.5523208379745483
+New best loss: 0.24578367173671722
+New best loss: 0.24146781861782074
+New best loss: 0.21641972661018372
+New best loss: 0.19871143996715546
+712639 steps completed in 1.0d 1.0h 51.0m 47.7s
+[1;34mwandb[0m:
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync ./wandb/offline-run-20250505_125539-33M_int1_58-220314[0m

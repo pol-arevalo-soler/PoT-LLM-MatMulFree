@@ -6,10 +6,10 @@ import pytest
 import torch
 import torch.nn.functional as F
 
-from fla.ops.hgrn import chunk_hgrn, fused_recurrent_hgrn
-from fla.ops.hgrn.naive import naive_recurrent_hgrn
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.hgrn import chunk_hgrn, fused_recurrent_hgrn
+from mmfreelm.ops.hgrn.naive import naive_recurrent_hgrn
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

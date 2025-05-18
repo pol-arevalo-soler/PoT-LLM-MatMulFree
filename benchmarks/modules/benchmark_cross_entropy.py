@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import triton
 
-from fla.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
+from mmfreelm.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
 
 
 @triton.testing.perf_report(
@@ -30,7 +30,7 @@ from fla.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
     )
 )
 def benchmark(T, provider):
-    from fla.utils import device
+    from mmfreelm.utils import device
     dtype = torch.bfloat16
     requires_grad = True
     B, H, V = 4, 4096, 120000

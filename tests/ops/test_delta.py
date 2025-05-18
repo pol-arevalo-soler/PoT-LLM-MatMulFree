@@ -6,9 +6,9 @@ import pytest
 import torch
 import torch.nn.functional as F
 
-from fla.ops.delta_rule import chunk_delta_rule, fused_recurrent_delta_rule
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.delta_rule import chunk_delta_rule, fused_recurrent_delta_rule
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

@@ -3,7 +3,7 @@
 import torch
 import triton
 
-from fla.ops.hgrn import chunk_hgrn, fused_recurrent_hgrn
+from mmfreelm.ops.hgrn import chunk_hgrn, fused_recurrent_hgrn
 
 
 @triton.testing.perf_report(
@@ -27,7 +27,7 @@ from fla.ops.hgrn import chunk_hgrn, fused_recurrent_hgrn
     )
 )
 def benchmark(T, provider):
-    from fla.utils import device
+    from mmfreelm.utils import device
     dtype = torch.bfloat16
     B, D = 16, 512
 

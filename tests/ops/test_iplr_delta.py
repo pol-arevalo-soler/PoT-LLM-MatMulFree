@@ -8,10 +8,10 @@ import torch
 import torch.nn.functional as F
 from einops import rearrange
 
-from fla.ops.generalized_delta_rule.iplr.chunk import chunk_iplr_delta_rule
-from fla.ops.generalized_delta_rule.iplr.fused_recurrent import fused_recurrent_iplr_delta_rule
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.generalized_delta_rule.iplr.chunk import chunk_iplr_delta_rule
+from mmfreelm.ops.generalized_delta_rule.iplr.fused_recurrent import fused_recurrent_iplr_delta_rule
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

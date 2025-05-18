@@ -5,8 +5,8 @@ import os
 import pytest
 import torch
 
-from fla.layers.gla import GatedLinearAttention
-from fla.utils import device, device_platform
+from mmfreelm.layers.gla import GatedLinearAttention
+from mmfreelm.utils import device, device_platform
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

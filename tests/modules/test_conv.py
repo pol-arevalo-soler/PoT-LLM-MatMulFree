@@ -5,10 +5,10 @@ import os
 import pytest
 import torch
 
-from fla.modules.convolution import ShortConvolution
-from fla.ops.common.utils import prepare_lens
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.modules.convolution import ShortConvolution
+from mmfreelm.ops.common.utils import prepare_lens
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 try:
     from causal_conv1d import causal_conv1d_fn

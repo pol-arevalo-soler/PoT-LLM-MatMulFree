@@ -8,11 +8,11 @@ import torch
 import torch.nn.functional as F
 from einops import rearrange
 
-from fla.ops.simple_gla import chunk_simple_gla
-from fla.ops.simple_gla.fused_recurrent import fused_recurrent_simple_gla
-from fla.ops.simple_gla.parallel import parallel_simple_gla
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.simple_gla import chunk_simple_gla
+from mmfreelm.ops.simple_gla.fused_recurrent import fused_recurrent_simple_gla
+from mmfreelm.ops.simple_gla.parallel import parallel_simple_gla
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

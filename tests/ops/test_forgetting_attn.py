@@ -8,9 +8,9 @@ import torch
 import torch.nn.functional as F
 from einops import rearrange, repeat
 
-from fla.ops.forgetting_attn.parallel import parallel_forgetting_attn
-from fla.ops.utils.testing import assert_close
-from fla.utils import check_shared_mem, device, is_intel_alchemist
+from mmfreelm.ops.forgetting_attn.parallel import parallel_forgetting_attn
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import check_shared_mem, device, is_intel_alchemist
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

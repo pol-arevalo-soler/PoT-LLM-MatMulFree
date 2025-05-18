@@ -101,7 +101,7 @@ if __name__ == '__main__':
     B, H, T, D = 2, 8, 1024, 128
     dtype = torch.float
     torch.manual_seed(42)
-    from fla.utils import device
+    from mmfreelm.utils import device
 
     # [batch_size, n_heads, seq_len, d_head]
     q = torch.randn((B, H, T, D), dtype=dtype, device=device)

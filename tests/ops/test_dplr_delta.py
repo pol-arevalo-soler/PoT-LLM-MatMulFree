@@ -7,9 +7,9 @@ import torch
 import torch.nn.functional as F
 from einops import rearrange
 
-from fla.ops.generalized_delta_rule.dplr import chunk_dplr_delta_rule, fused_recurrent_dplr_delta_rule
-from fla.ops.utils.testing import assert_close
-from fla.utils import device
+from mmfreelm.ops.generalized_delta_rule.dplr import chunk_dplr_delta_rule, fused_recurrent_dplr_delta_rule
+from mmfreelm.ops.utils.testing import assert_close
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

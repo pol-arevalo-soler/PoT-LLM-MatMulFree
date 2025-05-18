@@ -4,7 +4,7 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from fla.utils import device
+from mmfreelm.utils import device
 
 if __name__ == '__main__':
     model = AutoModelForCausalLM.from_pretrained('fla-hub/gla-340M-15B').to(device).to(torch.float32)

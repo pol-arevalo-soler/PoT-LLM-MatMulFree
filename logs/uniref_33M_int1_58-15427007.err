@@ -1,0 +1,11 @@
+initializing deepspeed distributed: GLOBAL_RANK: 0, MEMBER: 1/4
+initializing deepspeed distributed: GLOBAL_RANK: 3, MEMBER: 4/4
+initializing deepspeed distributed: GLOBAL_RANK: 2, MEMBER: 3/4
+initializing deepspeed distributed: GLOBAL_RANK: 1, MEMBER: 2/4
+Enabling DeepSpeed BF16. Model parameters and inputs will be cast to `bfloat16`.
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: WARNING `resume` will be ignored since W&B syncing is set to `offline`. Starting a new run with run id 33M_int1_58-220314.
+wandb: Tracking run with wandb version 0.18.7
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[rank0]:[W506 14:46:44.607612052 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

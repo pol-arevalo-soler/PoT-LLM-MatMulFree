@@ -1,0 +1,157 @@
+Traceback (most recent call last):
+  File "/leonardo/home/userexternal/parevalo/.local/bin/wandb", line 10, in <module>
+    sys.exit(cli())
+             ^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/cli/cli.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/cli/cli.py", line 245, in login
+    wandb.setup(
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 432, in setup
+    return _setup(settings=settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 368, in _setup
+    _singleton = _WandbSetup(settings=settings, pid=pid)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 99, in __init__
+    self._settings = self._settings_setup(settings)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 172, in _settings_setup
+    s.update_from_workspace_config_file()
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_settings.py", line 1438, in update_from_workspace_config_file
+    setattr(self, key, value)
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/pydantic/main.py", line 996, in __setattr__
+    setattr_handler(self, name, value)  # call here to not memo on possibly unknown fields
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/pydantic/main.py", line 114, in <lambda>
+    'validate_assignment': lambda model, name, val: model.__pydantic_validator__.validate_assignment(model, name, val),  # pyright: ignore[reportAssignmentType]
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Settings
+disabled
+  Object has no attribute 'disabled' [type=no_such_attribute, input_value='true', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/no_such_attribute
+initializing deepspeed distributed: GLOBAL_RANK: 0, MEMBER: 1/4
+initializing deepspeed distributed: GLOBAL_RANK: 3, MEMBER: 4/4
+initializing deepspeed distributed: GLOBAL_RANK: 2, MEMBER: 3/4
+initializing deepspeed distributed: GLOBAL_RANK: 1, MEMBER: 2/4
+Enabling DeepSpeed BF16. Model parameters and inputs will be cast to `bfloat16`.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 309, in <module>
+[rank0]:     main(config, args.from_checkpoint, args.extra_epoch)
+[rank0]:   File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/main.py", line 291, in main
+[rank0]:     model = train_model(fabric, data_loaders, model, criterion, optimizer, config["grad_acc"], state["step"], state["best_loss"], directory_path,tokens=tokens)
+[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo_work/EUHPC_A03_013/pol/new/flash-linear-attention/src/mmfreeplm/training.py", line 69, in train_model
+[rank0]:     fabric.log_dict({"step": step, "best loss": best_loss, "loss": loss.item(), "ppl": torch.exp(loss).item()})
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/fabric.py", line 903, in log_dict
+[rank0]:     logger.log_metrics(metrics=metrics, step=step)
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/pytorch/loggers/wandb.py", line 443, in log_metrics
+[rank0]:     self.experiment.log(metrics)
+[rank0]:     ^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/fabric/loggers/logger.py", line 118, in experiment
+[rank0]:     return fn(self)
+[rank0]:            ^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/lightning/pytorch/loggers/wandb.py", line 407, in experiment
+[rank0]:     self._experiment = wandb.init(**self._wandb_init)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1664, in init
+[rank0]:     wandb._sentry.reraise(e)
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+[rank0]:     raise exc.with_traceback(sys.exc_info()[2])
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1592, in init
+[rank0]:     wl = wandb_setup._setup(start_service=False)
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/anaconda3-2023.09-0-zcre7pfofz45c3btxpdk5zvcicdq5evx/lib/python3.11/contextlib.py", line 81, in inner
+[rank0]:     return func(*args, **kwds)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 368, in _setup
+[rank0]:     _singleton = _WandbSetup(settings=settings, pid=pid)
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 99, in __init__
+[rank0]:     self._settings = self._settings_setup(settings)
+[rank0]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 172, in _settings_setup
+[rank0]:     s.update_from_workspace_config_file()
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/wandb/sdk/wandb_settings.py", line 1438, in update_from_workspace_config_file
+[rank0]:     setattr(self, key, value)
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/pydantic/main.py", line 996, in __setattr__
+[rank0]:     setattr_handler(self, name, value)  # call here to not memo on possibly unknown fields
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/pydantic/main.py", line 114, in <lambda>
+[rank0]:     'validate_assignment': lambda model, name, val: model.__pydantic_validator__.validate_assignment(model, name, val),  # pyright: ignore[reportAssignmentType]
+[rank0]:                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: pydantic_core._pydantic_core.ValidationError: 1 validation error for Settings
+[rank0]: disabled
+[rank0]:   Object has no attribute 'disabled' [type=no_such_attribute, input_value='true', input_type=str]
+[rank0]:     For further information visit https://errors.pydantic.dev/2.11/v/no_such_attribute
+[rank0]:[W505 12:23:38.192953205 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+srun: error: lrdn3030: task 0: Exited with exit code 1
+[rank3]:[E505 12:33:17.935631949 ProcessGroupNCCL.cpp:616] [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=213, OpType=ALLREDUCE, NumelIn=33264000, NumelOut=33264000, Timeout(ms)=600000) ran for 600001 milliseconds before timing out.
+[rank3]:[E505 12:33:17.940122826 ProcessGroupNCCL.cpp:1785] [PG ID 1 PG GUID 1 Rank 3] Exception (either an error or timeout) detected by watchdog at work: 213, last enqueued NCCL work: 213, last completed NCCL work: 212.
+[rank3]:[E505 12:33:17.940168869 ProcessGroupNCCL.cpp:1834] [PG ID 1 PG GUID 1 Rank 3] Timeout at NCCL work: 213, last enqueued NCCL work: 213, last completed NCCL work: 212.
+[rank3]:[E505 12:33:17.940192753 ProcessGroupNCCL.cpp:630] [Rank 3] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank3]:[E505 12:33:17.940211721 ProcessGroupNCCL.cpp:636] [Rank 3] To avoid data inconsistency, we are taking the entire process down.
+[rank3]:[E505 12:33:17.943314860 ProcessGroupNCCL.cpp:1595] [PG ID 1 PG GUID 1 Rank 3] Process group watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=213, OpType=ALLREDUCE, NumelIn=33264000, NumelOut=33264000, Timeout(ms)=600000) ran for 600001 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x152d572c3446 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x152d5860aa92 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x152d58611ed3 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x152d5861393d in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x152da15fb5c0 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x81ca (0x152da444e1ca in /lib64/libpthread.so.0)
+frame #6: clone + 0x43 (0x152da392fe73 in /lib64/libc.so.6)
+
+[rank1]:[E505 12:33:18.512626421 ProcessGroupNCCL.cpp:616] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=213, OpType=ALLREDUCE, NumelIn=33264000, NumelOut=33264000, Timeout(ms)=600000) ran for 600069 milliseconds before timing out.
+[rank1]:[E505 12:33:18.512907899 ProcessGroupNCCL.cpp:1785] [PG ID 1 PG GUID 1 Rank 1] Exception (either an error or timeout) detected by watchdog at work: 213, last enqueued NCCL work: 213, last completed NCCL work: 212.
+[rank1]:[E505 12:33:18.512958266 ProcessGroupNCCL.cpp:1834] [PG ID 1 PG GUID 1 Rank 1] Timeout at NCCL work: 213, last enqueued NCCL work: 213, last completed NCCL work: 212.
+[rank1]:[E505 12:33:18.512996568 ProcessGroupNCCL.cpp:630] [Rank 1] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank1]:[E505 12:33:18.513031636 ProcessGroupNCCL.cpp:636] [Rank 1] To avoid data inconsistency, we are taking the entire process down.
+[rank1]:[E505 12:33:18.514561929 ProcessGroupNCCL.cpp:1595] [PG ID 1 PG GUID 1 Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=213, OpType=ALLREDUCE, NumelIn=33264000, NumelOut=33264000, Timeout(ms)=600000) ran for 600069 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x1475a8ec9446 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x1475aa210a92 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x1475aa217ed3 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x1475aa21993d in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x1475f32015c0 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x81ca (0x1475f60541ca in /lib64/libpthread.so.0)
+frame #6: clone + 0x43 (0x1475f5535e73 in /lib64/libc.so.6)
+
+[rank2]:[E505 12:33:18.536598466 ProcessGroupNCCL.cpp:616] [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=213, OpType=ALLREDUCE, NumelIn=33264000, NumelOut=33264000, Timeout(ms)=600000) ran for 600100 milliseconds before timing out.
+[rank2]:[E505 12:33:18.536729087 ProcessGroupNCCL.cpp:1785] [PG ID 1 PG GUID 1 Rank 2] Exception (either an error or timeout) detected by watchdog at work: 213, last enqueued NCCL work: 213, last completed NCCL work: 212.
+[rank2]:[E505 12:33:18.536735926 ProcessGroupNCCL.cpp:1834] [PG ID 1 PG GUID 1 Rank 2] Timeout at NCCL work: 213, last enqueued NCCL work: 213, last completed NCCL work: 212.
+[rank2]:[E505 12:33:18.536739398 ProcessGroupNCCL.cpp:630] [Rank 2] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank2]:[E505 12:33:18.536741673 ProcessGroupNCCL.cpp:636] [Rank 2] To avoid data inconsistency, we are taking the entire process down.
+[rank2]:[E505 12:33:18.538231572 ProcessGroupNCCL.cpp:1595] [PG ID 1 PG GUID 1 Rank 2] Process group watchdog thread terminated with exception: [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=213, OpType=ALLREDUCE, NumelIn=33264000, NumelOut=33264000, Timeout(ms)=600000) ran for 600100 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14cd95d91446 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x14cd970d8a92 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x14cd970dfed3 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x14cd970e193d in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x14cde00c95c0 in /leonardo/home/userexternal/parevalo/.local/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x81ca (0x14cde2f1c1ca in /lib64/libpthread.so.0)
+frame #6: clone + 0x43 (0x14cde23fde73 in /lib64/libc.so.6)
+
+srun: error: lrdn3030: task 3: Aborted
+srun: error: lrdn3030: task 1: Aborted
+srun: error: lrdn3030: task 2: Aborted

@@ -5,9 +5,9 @@ import os
 import pytest
 import torch
 
-from fla.ops.based import fused_chunk_based, parallel_based
-from fla.ops.based.naive import naive_parallel_based
-from fla.utils import device
+from mmfreelm.ops.based import fused_chunk_based, parallel_based
+from mmfreelm.ops.based.naive import naive_parallel_based
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

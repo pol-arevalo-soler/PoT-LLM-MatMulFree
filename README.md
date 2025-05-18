@@ -101,12 +101,12 @@ ln -s 3rdparty/flash-linear-attention/fla fla
 
 ### Token Mixing
 
-We provide ``token mixing'' linear attention layers in `fla.layers` for you to use.
+We provide ``token mixing'' linear attention layers in `mmfreelm.layers` for you to use.
 You can replace the standard multihead attention layer in your model with other linear attention layers.
 Example usage is as follows:
 ```py
 >>> import torch
->>> from fla.layers import MultiScaleRetention
+>>> from mmfreelm.layers import MultiScaleRetention
 >>> batch_size, num_heads, seq_len, hidden_size = 32, 4, 2048, 1024
 >>> device, dtype = 'cuda:0', torch.bfloat16
 >>> retnet = MultiScaleRetention(hidden_size=hidden_size, num_heads=num_heads).to(device=device, dtype=dtype)
@@ -130,7 +130,7 @@ We provide the implementations of models that are compatible with 🤗 Transform
 Here's an example of how to initialize a GLA model from the default configs in `fla`:
 
 ```py
->>> from fla.models import GLAConfig
+>>> from mmfreelm.models import GLAConfig
 >>> from transformers import AutoModelForCausalLM
 >>> config = GLAConfig()
 >>> config
@@ -205,7 +205,7 @@ GLAForCausalLM(
 
 ### Fused Modules
 
-We offer a collection of fused modules in `fla.modules` to facilitate faster training:
+We offer a collection of fused modules in `mmfreelm.modules` to facilitate faster training:
 
 * [`Rotary Embedding`](fla/modules/rotary.py): rotary positional embeddings as adopted by the Llama architecture, a.k.a., Transformer++.
 * [`Norm Layers`](fla/modules/layernorm.py):
@@ -264,7 +264,7 @@ This is easily achieved by specifying the `attn` argument in the model configura
 For example, to create a 2-layer Samba model with interleaved Mamba and local attention layers, using a sliding window size of 2048:
 
 ```py
->>> from fla.models import SambaConfig
+>>> from mmfreelm.models import SambaConfig
 >>> from transformers import AutoModelForCausalLM
 >>> config = SambaConfig(num_hidden_layers=2)
 >>> config.attn = {

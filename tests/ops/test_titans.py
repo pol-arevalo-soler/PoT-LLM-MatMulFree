@@ -6,9 +6,9 @@ import pytest
 import torch
 import torch.nn.functional as F
 
-# from fla.ops.titans.fused_chunk import fused_chunk_titans_linear
-from fla.ops.titans.naive import chunk_titans_linear_ref
-from fla.utils import device
+# from mmfreelm.ops.titans.fused_chunk import fused_chunk_titans_linear
+from mmfreelm.ops.titans.naive import chunk_titans_linear_ref
+from mmfreelm.utils import device
 
 compiled_mode = os.getenv("COMPILER_MODE") == "1"
 if compiled_mode:

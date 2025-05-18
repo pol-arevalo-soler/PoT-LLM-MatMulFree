@@ -5,10 +5,10 @@ import torch
 from benchmark import benchmark_backward, benchmark_combined, benchmark_forward
 from torch.nn import functional as F
 
-from fla.ops.delta_rule import chunk_delta_rule
-from fla.ops.gla import chunk_gla
-from fla.ops.ttt import chunk_ttt_linear, fused_chunk_ttt_linear
-from fla.utils import device
+from mmfreelm.ops.delta_rule import chunk_delta_rule
+from mmfreelm.ops.gla import chunk_gla
+from mmfreelm.ops.ttt import chunk_ttt_linear, fused_chunk_ttt_linear
+from mmfreelm.utils import device
 
 # from flash_attn import flash_attn_func
 

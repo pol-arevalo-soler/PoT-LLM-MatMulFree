@@ -4,9 +4,9 @@ import torch
 import triton
 from torch.nn import functional as F
 
-from fla.ops.abc import chunk_abc
-from fla.ops.gla import chunk_gla
-from fla.ops.retention import chunk_retention
+from mmfreelm.ops.abc import chunk_abc
+from mmfreelm.ops.gla import chunk_gla
+from mmfreelm.ops.retention import chunk_retention
 
 try:
     from flash_attn import flash_attn_func
@@ -37,7 +37,7 @@ except BaseException:
     )
 )
 def benchmark(T, provider):
-    from fla.utils import device
+    from mmfreelm.utils import device
     dtype = torch.bfloat16
     requires_grad = True
     B, H, D, M = 16, 4, 128, 64
